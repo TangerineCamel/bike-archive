@@ -10,204 +10,142 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="page-shell">
-    <aside class="sidebar" aria-label="Primary">
-      <a class="logo" href="index.html" aria-label="Meituan Bike Archive home">
-        <span class="logo-mark" aria-hidden="true">
-          <span class="logo-wheel logo-wheel-left"></span>
-          <span class="logo-wheel logo-wheel-right"></span>
-          <span class="logo-frame"></span>
-          <span class="logo-seat"></span>
-          <span class="logo-handle"></span>
-        </span>
-        <span class="logo-text">Meituan Bike Archive</span>
-      </a>
 
-      <nav class="nav">
-        <a class="nav-link is-active" href="index.html">Bikes</a>
-        <a class="nav-link" href="components.html">Components</a>
-        <a class="nav-link" href="about.html">What &amp; why</a>
-      </nav>
-    </aside>
+  <header class="site-header">
+    <img class="site-logo" src="assets/icons/logo.png" alt="Meituan Bike Archive">
+    <span class="site-title">Evolv.Share</span>
+    <nav class="site-nav">
+      <a href="#bikes">Bikes</a>
+      <a href="#components">Components</a>
+      <a href="#why">What &amp; why</a>
+    </nav>
+  </header>
 
-    <main class="content">
-      <section class="gallery" id="bikes" aria-labelledby="bikes-title">
-        <div class="section-heading">
-          <h1 class="section-title section-title-version" id="bikes-title">Bikes</h1>
-        </div>
+  <main>
 
-        <div class="bike-grid">
-          <article class="bike-card">
-            <div class="bike-card-image">
-              <img class="bike-card-photo" src="assets/bikes/v1-0.jpg" alt="Meituan bike version 1.0">
-            </div>
-            <span class="bike-version-label">V1.0</span>
-            <h2 class="bike-card-name">Mechanical lock / plastic wheel panel</h2>
-            <p class="bike-card-description">
-              Early generation frame with mechanical lock and yellow plastic wheel panel.
-            </p>
-          </article>
+    <section class="section" id="bikes">
+      <h2 class="section-label">Iteration</h2>
+      <div class="carousel">
+        <article class="bike-card">
+          <span class="version-tag">V1.0</span>
+          <div class="bike-img"><img src="assets/bikes/v1-0.jpg" alt="V1.0"></div>
+          <p class="bike-desc">Mechanical lock. Yellow plastic wheel panel. Early generation frame.</p>
+        </article>
+        <article class="bike-card">
+          <span class="version-tag">V1.1</span>
+          <div class="bike-img"><img src="assets/bikes/v1-1.jpg" alt="V1.1"></div>
+          <p class="bike-desc">Mechanical lock. Metal wheel panel. Same major structure as V1.0.</p>
+        </article>
+        <article class="bike-card">
+          <span class="version-tag">V2.0</span>
+          <div class="bike-img"><img src="assets/bikes/v2-0.jpg" alt="V2.0"></div>
+          <p class="bike-desc">Electronic lock. Rigid front fork. Structural jump from V1 platform.</p>
+        </article>
+        <article class="bike-card">
+          <span class="version-tag">V2.1</span>
+          <div class="bike-img"><img src="assets/bikes/v2-1.jpg" alt="V2.1"></div>
+          <p class="bike-desc">Electronic lock. Minor detail iteration on the V2 platform.</p>
+        </article>
+        <article class="bike-card">
+          <span class="version-tag">V3.0</span>
+          <div class="bike-img"><img src="assets/bikes/v3-0.jpg" alt="V3.0"></div>
+          <p class="bike-desc">Electronic lock. Suspension fork. Current mainline version.</p>
+        </article>
+        <article class="bike-card branch">
+          <span class="version-tag">MIX</span>
+          <div class="bike-img"><img src="assets/bikes/v-mix.jpg" alt="Mix branch"></div>
+          <p class="bike-desc">Branch line. Remolded front assembly. Did not continue as mainline.</p>
+        </article>
+      </div>
+    </section>
 
-          <article class="bike-card">
-            <div class="bike-card-image">
-              <img class="bike-card-photo" src="assets/bikes/v1-1.jpg" alt="Meituan bike version 1.1">
-            </div>
-            <span class="bike-version-label">V1.1</span>
-            <h2 class="bike-card-name">Mechanical lock / metal wheel panel</h2>
-            <p class="bike-card-description">
-              Same major structure as V1.0, with wheel panel material updated to metal.
-            </p>
-          </article>
+    <section class="section" id="components">
+      <h2 class="section-label">Components</h2>
+      <div class="component-grid">
+        <article class="component-card">
+          <img src="assets/icons/icon-wheel.svg" alt="Wheel">
+          <span class="comp-name">Wheel</span>
+          <span class="comp-count">3 Variants</span>
+        </article>
+        <article class="component-card">
+          <img src="assets/icons/icon-painting.svg" alt="Painting">
+          <span class="comp-name">Painting</span>
+          <span class="comp-count">2 Variants</span>
+        </article>
+        <article class="component-card">
+          <img src="assets/icons/icon-seat.svg" alt="Seat">
+          <span class="comp-name">Seat</span>
+          <span class="comp-count">2 Variants</span>
+        </article>
+        <article class="component-card">
+          <img src="assets/icons/icon-fender-kickstand.svg" alt="Fender & Kickstand">
+          <span class="comp-name">Fender&amp;Kickstand</span>
+          <span class="comp-count">2 Variants</span>
+        </article>
+        <article class="component-card">
+          <img src="assets/icons/icon-basket.svg" alt="Basket">
+          <span class="comp-name">Basket</span>
+          <span class="comp-count">3 Variants</span>
+        </article>
+        <article class="component-card">
+          <img src="assets/icons/icon-handle.svg" alt="Handle">
+          <span class="comp-name">Handle</span>
+          <span class="comp-count">2 Variants</span>
+        </article>
+        <article class="component-card">
+          <img src="assets/icons/icon-lock.svg" alt="Lock">
+          <span class="comp-name">Lock</span>
+          <span class="comp-count">2 Variants</span>
+        </article>
+        <article class="component-card">
+          <img src="assets/icons/icon-pedal.svg" alt="Pedal">
+          <span class="comp-name">Pedal</span>
+          <span class="comp-count">2 Variants</span>
+        </article>
+        <article class="component-card">
+          <img src="assets/icons/icon-qrcode.svg" alt="QR Code">
+          <span class="comp-name">QRCode</span>
+          <span class="comp-count">3 Variants</span>
+        </article>
+        <article class="component-card">
+          <img src="assets/icons/icon-accessories.svg" alt="Accessories">
+          <span class="comp-name">Accessories</span>
+          <span class="comp-count">4 Variants</span>
+        </article>
+      </div>
+      <div class="carousel">
+        <article class="variant-card">
+          <div class="variant-img"><img src="assets/components/wh1-0.jpg" alt="WH1.0"></div>
+          <span class="version-tag outline">WH1.0</span>
+          <p class="bike-desc">Yellow plastic side panel used on early production frames.</p>
+        </article>
+        <article class="variant-card">
+          <div class="variant-img"><img src="assets/components/wh2-0.jpg" alt="WH2.0"></div>
+          <span class="version-tag outline">WH2.0</span>
+          <p class="bike-desc">Metal spoke wheel replacing the early plastic panel.</p>
+        </article>
+        <article class="variant-card">
+          <div class="variant-img"><img src="assets/components/wh2-mix.jpg" alt="WH2-MIX"></div>
+          <span class="version-tag outline">WH2-MIX</span>
+          <p class="bike-desc">Wheel variant found on the branch line version.</p>
+        </article>
+      </div>
+    </section>
 
-          <article class="bike-card">
-            <div class="bike-card-image">
-              <img class="bike-card-photo" src="assets/bikes/v2-0.jpg" alt="Meituan bike version 2.0">
-            </div>
-            <span class="bike-version-label">V2.0</span>
-            <h2 class="bike-card-name">Electronic lock / rigid fork</h2>
-            <p class="bike-card-description">
-              Structural jump to electronic locking while retaining a rigid front fork.
-            </p>
-          </article>
+    <section class="section" id="why">
+      <h2 class="section-label">What &amp; why</h2>
+      <div class="about-text">
+        <p>这是一个持续生长的城市观察档案。记录美团小黄车从第一代至今的结构性演化。</p>
+        <p>不设终点。不追求完整。只追求诚实。</p>
+        <p>选择只记录美团，本身就是一个立场。定义什么是大版本，本身就是一个视角。用客观的语言，呈现一个有立场的观察。</p>
+      </div>
+    </section>
 
-          <article class="bike-card">
-            <div class="bike-card-image">
-              <img class="bike-card-photo" src="assets/bikes/v2-1.jpg" alt="Meituan bike version 2.1">
-            </div>
-            <span class="bike-version-label">V2.1</span>
-            <h2 class="bike-card-name">Electronic lock / detail iteration</h2>
-            <p class="bike-card-description">
-              Minor refinements on the V2 platform without a new major structural shift.
-            </p>
-          </article>
+  </main>
 
-          <article class="bike-card">
-            <div class="bike-card-image">
-              <img class="bike-card-photo" src="assets/bikes/v3-0.jpg" alt="Meituan bike version 3.0">
-            </div>
-            <span class="bike-version-label">V3.0</span>
-            <h2 class="bike-card-name">Electronic lock / suspension fork</h2>
-            <p class="bike-card-description">
-              Current major version with front suspension and updated frame behavior.
-            </p>
-          </article>
+  <footer class="site-footer">
+    <p>The interface steps back so the bike can speak. Content is provisional; structure is the archive.</p>
+  </footer>
 
-          <article class="bike-card">
-            <div class="bike-card-image">
-              <img class="bike-card-photo" src="assets/bikes/v-mix.jpg" alt="Meituan bike branch mix version">
-            </div>
-            <span class="bike-version-label">MIX</span>
-            <h2 class="bike-card-name">Branch line / remolded front assembly</h2>
-            <p class="bike-card-description">
-              A side branch direction that appeared in the field but did not continue as mainline.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="components-preview" id="components" aria-labelledby="components-title">
-        <div class="section-heading">
-          <h2 class="section-title section-title-version" id="components-title">Components</h2>
-        </div>
-
-        <div class="component-grid">
-          <article class="component-card">
-            <img class="component-icon" src="assets/icons/icon-wheel.svg" alt="Wheel icon">
-            <div class="component-meta">
-              <span class="component-title">Wheel</span>
-              <span class="component-count">3 Variants</span>
-            </div>
-          </article>
-          <article class="component-card">
-            <img class="component-icon" src="assets/icons/icon-painting.svg" alt="Painting icon">
-            <div class="component-meta">
-              <span class="component-title">Painting</span>
-              <span class="component-count">2 Variants</span>
-            </div>
-          </article>
-          <article class="component-card">
-            <img class="component-icon" src="assets/icons/icon-seat.svg" alt="Seat icon">
-            <div class="component-meta">
-              <span class="component-title">Seat</span>
-              <span class="component-count">2 Variants</span>
-            </div>
-          </article>
-          <article class="component-card">
-            <img class="component-icon" src="assets/icons/icon-fender-kickstand.svg" alt="Fender and kickstand icon">
-            <div class="component-meta">
-              <span class="component-title">Fender&amp;Kickstand</span>
-              <span class="component-count">2 Variants</span>
-            </div>
-          </article>
-          <article class="component-card">
-            <img class="component-icon" src="assets/icons/icon-basket.svg" alt="Basket icon">
-            <div class="component-meta">
-              <span class="component-title">Basket</span>
-              <span class="component-count">3 Variants</span>
-            </div>
-          </article>
-          <article class="component-card">
-            <img class="component-icon" src="assets/icons/icon-handle.svg" alt="Handle icon">
-            <div class="component-meta">
-              <span class="component-title">Handle</span>
-              <span class="component-count">2 Variants</span>
-            </div>
-          </article>
-          <article class="component-card">
-            <img class="component-icon" src="assets/icons/icon-lock.svg" alt="Lock icon">
-            <div class="component-meta">
-              <span class="component-title">Lock</span>
-              <span class="component-count">2 Variants</span>
-            </div>
-          </article>
-          <article class="component-card">
-            <img class="component-icon" src="assets/icons/icon-pedal.svg" alt="Pedal icon">
-            <div class="component-meta">
-              <span class="component-title">Pedal</span>
-              <span class="component-count">2 Variants</span>
-            </div>
-          </article>
-          <article class="component-card">
-            <img class="component-icon" src="assets/icons/icon-qrcode.svg" alt="QR code icon">
-            <div class="component-meta">
-              <span class="component-title">QRCode</span>
-              <span class="component-count">3 Variants</span>
-            </div>
-          </article>
-          <article class="component-card">
-            <img class="component-icon" src="assets/icons/icon-accessories.svg" alt="Accessories icon">
-            <div class="component-meta">
-              <span class="component-title">Accessories</span>
-              <span class="component-count">4 Variants</span>
-            </div>
-          </article>
-        </div>
-
-        <div class="variant-preview">
-          <article class="variant-card">
-            <div class="variant-image"></div>
-            <span class="component-version-label">WH1.0</span>
-            <p class="variant-copy">Yellow plastic side panel used on early production frames.</p>
-          </article>
-          <article class="variant-card">
-            <div class="variant-image"></div>
-            <span class="component-version-label">LK1.0</span>
-            <p class="variant-copy">Mechanical lock body before the electronic lock transition.</p>
-          </article>
-          <article class="variant-card">
-            <div class="variant-image"></div>
-            <span class="component-version-label">BK1.0</span>
-            <p class="variant-copy">Basket profile with tighter wire spacing and a shorter front lip.</p>
-          </article>
-        </div>
-      </section>
-
-      <footer class="footer" id="why">
-        <p class="footer-copy">
-          The interface steps back so the bike can speak. Content is provisional; structure is the archive.
-        </p>
-      </footer>
-    </main>
-  </div>
 </body>
 </html>
