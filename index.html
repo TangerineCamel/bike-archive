@@ -143,6 +143,168 @@
 
   </main>
 
+<!-- Modal -->
+<div class="modal-backdrop" id="modal">
+  <div class="modal-strip" id="modal-strip"></div>
+  <div class="modal-info">
+    <span class="modal-version" id="modal-version"></span>
+    <p class="modal-desc" id="modal-desc"></p>
+  </div>
+  <div class="modal-nav">
+    <button id="btn-prev">← 查看上一代</button>
+    <button id="btn-next">查看下一代 →</button>
+  </div>
+</div>
+
+<script>
+  const bikes = Array.from(document.querySelectorAll('.bike-card'));
+  const modal = document.getElementById('modal');
+  const strip = document.getElementById('modal-strip');
+  const modalVersion = document.getElementById('modal-version');
+  const modalDesc = document.getElementById('modal-desc');
+  const btnPrev = document.getElementById('btn-prev');
+  const btnNext = document.getElementById('btn-next');
+  let current = 0;
+  let isButtonNav = false;
+  let isPinching = false;
+
+  bikes.forEach(card => {
+    const slide = document.createElement('div');
+    slide.className = 'modal-slide';
+    const img = document.createElement('img');
+    img.src = card.querySelector('img').src;
+    slide.appendChild(img);
+    strip.appendChild(slide);
+  });
+
+  function updateInfo() {
+    const card = bikes[current];
+    modalVersion.textContent = card.querySelector('.version-tag').textContent;
+    modalDesc.textContent = card.querySelector('.bike-desc').textContent;
+    btnPrev.hidden = current === 0;
+    btnNext.hidden = current === bikes.length - 1;
+  }
+
+  function goTo(index, animated) {
+    current = index;
+    updateInfo();
+    if (animated) isButtonNav = true;
+    strip.scrollTo({ left: index * strip.clientWidth, behavior: animated ? 'smooth' : 'instant' });
+  }
+
+  function openModal(index) {
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    goTo(index, false);
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  bikes.forEach((card, i) => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', () => openModal(i));
+  });
+
+  btnPrev.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (current > 0) goTo(current - 1, true);
+  });
+
+  btnNext.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (current < bikes.length - 1) goTo(current + 1, true);
+  });
+
+  strip.addEventListener('scroll', () => {
+    if (isButtonNav) return;
+    const index = Math.round(strip.scrollLeft / strip.clientWidth);
+    if (index !== current) { current = index; updateInfo(); }
+  });
+
+  strip.addEventListener('scrollend', () => {
+    isButtonNav = false;
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  let startY = 0;
+  strip.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 1) {
+      startY = e.touches[0].clientY;
+    } else {
+      startY = -9999;
+    }
+  });
+  strip.addEventListener('touchend', (e) => {
+    if (e.touches.length === 0) {
+      if (isPinching) {
+        isPinching = false;
+        return;
+      }
+      if (pinchScale === 1 && e.changedTouches[0].clientY - startY > 80) {
+        closeModal();
+      }
+    }
+  });
+
+  let pinchScale = 1;
+  let pinchStartDist = 0;
+
+  strip.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 2) {
+      isPinching = true;
+      pinchStartDist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      const currentSlide = strip.querySelectorAll('.modal-slide')[current];
+      const img = currentSlide?.querySelector('img');
+      if (img) {
+        const rect = img.getBoundingClientRect();
+        const cx = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+        const cy = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+        const ox = ((cx - rect.left) / rect.width) * 100;
+        const oy = ((cy - rect.top) / rect.height) * 100;
+        img.style.transformOrigin = `${ox}% ${oy}%`;
+        img.style.transition = 'none';
+      }
+    }
+  });
+
+  strip.addEventListener('touchmove', (e) => {
+    if (e.touches.length === 2) {
+      e.preventDefault();
+      const dist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      const currentSlide = strip.querySelectorAll('.modal-slide')[current];
+      const img = currentSlide?.querySelector('img');
+      if (img) {
+        pinchScale = Math.max(1, Math.min(3, dist / pinchStartDist));
+        img.style.transform = `scale(${pinchScale})`;
+      }
+    }
+  }, { passive: false });
+
+  strip.addEventListener('touchend', (e) => {
+    if (e.touches.length < 2) {
+      const currentSlide = strip.querySelectorAll('.modal-slide')[current];
+      const img = currentSlide?.querySelector('img');
+      if (img && pinchScale !== 1) {
+        img.style.transition = 'transform 0.3s ease';
+        img.style.transform = 'scale(1)';
+        pinchScale = 1;
+      }
+    }
+  });
+</script>
+
   <footer class="site-footer">
     <p>The interface steps back so the bike can speak. Content is provisional; structure is the archive.</p>
   </footer>
