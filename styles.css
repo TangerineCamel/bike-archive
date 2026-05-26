@@ -1,3 +1,8 @@
+html, body {
+  background: #fafafa;
+  min-height: 100%;
+}
+
 :root {
   --bg: #fafafa;
   --text: #111111;
