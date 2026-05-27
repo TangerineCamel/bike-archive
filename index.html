@@ -145,14 +145,16 @@
 
 <!-- Modal -->
 <div class="modal-backdrop" id="modal">
-  <div class="modal-strip" id="modal-strip"></div>
-  <div class="modal-info">
-    <span class="modal-version" id="modal-version"></span>
-    <p class="modal-desc" id="modal-desc"></p>
-  </div>
-  <div class="modal-nav">
-    <button id="btn-prev">← 查看上一代</button>
-    <button id="btn-next">查看下一代 →</button>
+  <div class="modal-card">
+    <div class="modal-strip" id="modal-strip"></div>
+    <div class="modal-info">
+      <span class="modal-version" id="modal-version"></span>
+      <p class="modal-desc" id="modal-desc"></p>
+    </div>
+    <div class="modal-nav">
+      <button id="btn-prev">← 查看上一代</button>
+      <button id="btn-next">查看下一代 →</button>
+    </div>
   </div>
 </div>
 
@@ -229,7 +231,7 @@
   });
 
   modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
+    if (!e.target.closest('.modal-card')) closeModal();
   });
 
   let startY = 0;
