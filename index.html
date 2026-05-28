@@ -27,9 +27,9 @@
           <div class="bike-img"><img src="assets/bikes/v1-0.jpg" alt="V1.0"></div>
           <p class="bike-desc">美团收购摩拜后的第1代单车，主要标识为其车轮的黄色塑料条幅和物理车锁，以及黄黑白的配色方案</p>
         </article>
-        <article class="bike-card">
+        <article class="bike-card is-missing" data-missing="true">
           <span class="version-tag">V1.1</span>
-          <div class="bike-img"><img src="assets/bikes/v1-1.jpg" alt="V1.1"></div>
+          <div class="bike-img"><img src="assets/bikes/missed-bike.png" alt="V1.1"></div>
           <p class="bike-desc">第1代的首次升级版本，物理锁更新为蓝牙电子锁，需智能手机扫码开启/关闭</p>
         </article>
         <article class="bike-card">
@@ -180,6 +180,24 @@
   </div>
 </div>
 
+<!-- Upload Modal -->
+<div class="upload-backdrop" id="upload-modal">
+  <div class="upload-card">
+    <div class="upload-cell upload-cell-left"></div>
+    <div class="upload-cell upload-cell-right"></div>
+    <div class="upload-overlay upload-overlay-left">
+      <img class="upload-qr" src="assets/icons/img-upload-link.png" alt="上传二维码">
+    </div>
+    <div class="upload-overlay upload-overlay-right">
+      <p class="upload-text">截图扫码上传美团单车图片</p>
+      <p class="upload-text upload-or">或</p>
+      <p class="upload-text">
+        <a class="upload-link" href="https://my.feishu.cn/share/base/form/shrcnwdj3fUaG0mImgCStgD0Y8d" target="_blank" rel="noopener">点击这里</a> 直接上传
+      </p>
+    </div>
+  </div>
+</div>
+
 <script>
   // ── 构成板块：组件 nav + 变体 carousel ──
   const componentSpecs = {
@@ -283,9 +301,28 @@
     document.body.style.overflow = '';
   }
 
+  const uploadModal = document.getElementById('upload-modal');
+  function openUploadModal() {
+    uploadModal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeUploadModal() {
+    uploadModal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+  uploadModal.addEventListener('click', (e) => {
+    if (!e.target.closest('.upload-card')) closeUploadModal();
+  });
+
   bikes.forEach((card, i) => {
     card.style.cursor = 'pointer';
-    card.addEventListener('click', () => openModal(i));
+    card.addEventListener('click', () => {
+      if (card.dataset.missing === 'true') {
+        openUploadModal();
+      } else {
+        openModal(i);
+      }
+    });
   });
 
   strip.addEventListener('scroll', () => {
