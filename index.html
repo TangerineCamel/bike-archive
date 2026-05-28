@@ -137,12 +137,33 @@
       <div class="carousel" id="variant-carousel"></div>
     </section>
 
-    <section class="section" id="why">
-      <h2 class="section-label">What &amp; why</h2>
-      <div class="about-text">
-        <p>这是一个持续生长的城市观察档案。记录美团小黄车从第一代至今的结构性演化。</p>
-        <p>不设终点。不追求完整。只追求诚实。</p>
-        <p>选择只记录美团，本身就是一个立场。定义什么是大版本，本身就是一个视角。用客观的语言，呈现一个有立场的观察。</p>
+    <section class="section" id="qa">
+      <h2 class="section-label">问答</h2>
+      <div class="qa-list">
+        <div class="qa-item">
+          <p class="qa-q">Q：为什么要收集番茄酱包？</p>
+          <p class="qa-a">第一次收集是在马来西亚旅行时当纪念品拿的，但是我觉得相比于完全没有限制的冰箱贴，这种集束在某个规范下的产物更让我着迷，然后它又衍生出了各种型号，就像远房亲戚，既有关系，大家参差不齐的感觉很好玩</p>
+        </div>
+        <div class="qa-item">
+          <p class="qa-q">Q：每次去麦当劳都是为了拿番茄酱吗？还是顺手拿的？</p>
+          <p class="qa-a">我对美食的追求不是很大，在旅行中吃各地的麦当劳既是现代人对果腹本能，也是观察本地人文的一部分吧，拿番茄酱就是自然而然的产物咯</p>
+        </div>
+        <div class="qa-item">
+          <p class="qa-q">Q：为什么有空手而归的地区？</p>
+          <p class="qa-a">那些地方我去的时候，这个项目还不存在，或者说没这个思维（苦笑）。第一次出国是2014年美国，空手而归虽是遗憾，但也是一种实诚的档案记录方式</p>
+        </div>
+        <div class="qa-item">
+          <p class="qa-q">Q：不同国家的番茄酱味道一样吗？</p>
+          <p class="qa-a">说实话我尝不太出来。但我确信在马来西亚槟城机场要番茄酱，只能要到辣椒酱包——它根本就不是番茄酱！</p>
+        </div>
+        <div class="qa-item">
+          <p class="qa-q">Q：这个网站下一步的设想？</p>
+          <p class="qa-a">想让大家可以给自己最喜欢的设计点赞或者踩。然后继续收集，也许会开放征集——这样这里说不定可以变成一个麦当劳番茄酱包博物馆（姨母笑</p>
+        </div>
+        <div class="qa-item">
+          <p class="qa-q">Q：这不就是囤垃圾吗？</p>
+          <p class="qa-a">大家对垃圾的定义不太一样。况且我觉得在冰箱里留这么一个小角落，也没妨碍到谁啦</p>
+        </div>
       </div>
     </section>
 
@@ -186,8 +207,8 @@
       const card = document.createElement('article');
       card.className = 'variant-card';
       card.innerHTML = `
-        <div class="variant-img"><img src="${PLACEHOLDER_IMG}" alt="V?-${spec.abbr}${i}"></div>
         <span class="version-tag outline">V?-${spec.abbr}${i}</span>
+        <div class="variant-img"><img src="${PLACEHOLDER_IMG}" alt="V?-${spec.abbr}${i}"></div>
       `;
       variantCarousel.appendChild(card);
     }

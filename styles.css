@@ -10,7 +10,7 @@ html, body {
   --text: #111111;
   --text-dim: #999999;
   --card-bg: #dadada;
-  --mono: "Share Tech Mono", ui-monospace, Menlo, monospace;
+  --mono: "Share Tech Mono", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", ui-monospace, Menlo, monospace;
   --page-pad: 80px;
 }
 
@@ -42,6 +42,11 @@ a { color: inherit; text-decoration: none; }
 }
 
 #components.section {
+  padding-top: 8px;
+  padding-bottom: 28px;
+}
+
+#qa.section {
   padding-top: 8px;
 }
 
@@ -81,10 +86,34 @@ a { color: inherit; text-decoration: none; }
   font-weight: 400;
 }
 
-#components .section-label {
+#components .section-label,
+#qa .section-label {
   font-size: 14px;
   margin-bottom: 16px;
   font-weight: 600;
+}
+
+.qa-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.qa-item .qa-q {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #111;
+}
+
+.qa-item .qa-a {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  color: #111;
 }
 
 /* ── Carousel ── */
@@ -140,7 +169,9 @@ a { color: inherit; text-decoration: none; }
 
 .bike-desc {
   margin: 0;
-  font-size: 11px;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   line-height: 1.5;
   color: #111;
 }
@@ -271,10 +302,6 @@ a { color: inherit; text-decoration: none; }
 
 /* ── Modal ── */
 .modal-backdrop {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.92);
@@ -282,6 +309,7 @@ a { color: inherit; text-decoration: none; }
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
+  overflow-y: auto;
 }
 
 .modal-backdrop.is-open {
@@ -292,6 +320,10 @@ a { color: inherit; text-decoration: none; }
 }
 
 .modal-card {
+  position: absolute;
+  top: max(0px, calc((100svh - min(541px, 100vw * 541 / 390)) / 2));
+  left: 50%;
+  transform: translateX(-50%);
   width: min(390px, 100vw);
   min-height: min(541px, calc(100vw * 541 / 390));
   background: #fff;
@@ -349,10 +381,11 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid #111;
   color: #111;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 10px;
+  font-weight: 400;
   letter-spacing: 0.1em;
   cursor: pointer;
-  padding: 5px 9px;
+  padding: 2px 4px;
   opacity: 0.35;
 }
 
