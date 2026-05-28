@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: dark)">
   <title>Meituan Bike Archive</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,17 +16,11 @@
   <header class="site-header">
     <img class="site-logo" src="assets/icons/logo.png" alt="Meituan Bike Archive">
     <span class="site-title">Evolv.Share</span>
-    <nav class="site-nav">
-      <a href="#bikes">Bikes</a>
-      <a href="#components">Components</a>
-      <a href="#why">What &amp; why</a>
-    </nav>
   </header>
 
   <main>
 
     <section class="section" id="bikes">
-      <h2 class="section-label">Iteration</h2>
       <div class="carousel">
         <article class="bike-card">
           <span class="version-tag">V1.0</span>
@@ -65,76 +61,80 @@
     </section>
 
     <section class="section" id="components">
-      <h2 class="section-label">Components</h2>
+      <h2 class="section-label">构成</h2>
       <div class="component-grid">
-        <article class="component-card">
+        <article class="component-card" data-key="wheel">
           <img src="assets/icons/icon-wheel.svg" alt="Wheel">
-          <span class="comp-name">Wheel</span>
-          <span class="comp-count">3 Variants</span>
+          <span class="comp-text">
+            <span class="comp-name">车轮</span>
+            <span class="comp-count">3种版本</span>
+          </span>
         </article>
-        <article class="component-card">
+        <article class="component-card" data-key="painting">
           <img src="assets/icons/icon-painting.svg" alt="Painting">
-          <span class="comp-name">Painting</span>
-          <span class="comp-count">2 Variants</span>
+          <span class="comp-text">
+            <span class="comp-name">涂装</span>
+            <span class="comp-count">2种版本</span>
+          </span>
         </article>
-        <article class="component-card">
+        <article class="component-card" data-key="seat">
           <img src="assets/icons/icon-seat.svg" alt="Seat">
-          <span class="comp-name">Seat</span>
-          <span class="comp-count">2 Variants</span>
+          <span class="comp-text">
+            <span class="comp-name">车座</span>
+            <span class="comp-count">2种版本</span>
+          </span>
         </article>
-        <article class="component-card">
+        <article class="component-card" data-key="fender">
           <img src="assets/icons/icon-fender-kickstand.svg" alt="Fender & Kickstand">
-          <span class="comp-name">Fender&amp;Kickstand</span>
-          <span class="comp-count">2 Variants</span>
+          <span class="comp-text">
+            <span class="comp-name">挡泥板和支架</span>
+            <span class="comp-count">2种版本</span>
+          </span>
         </article>
-        <article class="component-card">
+        <article class="component-card" data-key="basket">
           <img src="assets/icons/icon-basket.svg" alt="Basket">
-          <span class="comp-name">Basket</span>
-          <span class="comp-count">3 Variants</span>
+          <span class="comp-text">
+            <span class="comp-name">车框</span>
+            <span class="comp-count">3种版本</span>
+          </span>
         </article>
-        <article class="component-card">
+        <article class="component-card" data-key="handle">
           <img src="assets/icons/icon-handle.svg" alt="Handle">
-          <span class="comp-name">Handle</span>
-          <span class="comp-count">2 Variants</span>
+          <span class="comp-text">
+            <span class="comp-name">把手/铃铛</span>
+            <span class="comp-count">2种版本</span>
+          </span>
         </article>
-        <article class="component-card">
+        <article class="component-card" data-key="lock">
           <img src="assets/icons/icon-lock.svg" alt="Lock">
-          <span class="comp-name">Lock</span>
-          <span class="comp-count">2 Variants</span>
+          <span class="comp-text">
+            <span class="comp-name">车锁</span>
+            <span class="comp-count">2种版本</span>
+          </span>
         </article>
-        <article class="component-card">
+        <article class="component-card" data-key="pedal">
           <img src="assets/icons/icon-pedal.svg" alt="Pedal">
-          <span class="comp-name">Pedal</span>
-          <span class="comp-count">2 Variants</span>
+          <span class="comp-text">
+            <span class="comp-name">脚踏</span>
+            <span class="comp-count">2种版本</span>
+          </span>
         </article>
-        <article class="component-card">
+        <article class="component-card" data-key="qrcode">
           <img src="assets/icons/icon-qrcode.svg" alt="QR Code">
-          <span class="comp-name">QRCode</span>
-          <span class="comp-count">3 Variants</span>
+          <span class="comp-text">
+            <span class="comp-name">二维码</span>
+            <span class="comp-count">3种版本</span>
+          </span>
         </article>
-        <article class="component-card">
+        <article class="component-card" data-key="accessories">
           <img src="assets/icons/icon-accessories.svg" alt="Accessories">
-          <span class="comp-name">Accessories</span>
-          <span class="comp-count">4 Variants</span>
+          <span class="comp-text">
+            <span class="comp-name">其他配件</span>
+            <span class="comp-count">4种版本</span>
+          </span>
         </article>
       </div>
-      <div class="carousel">
-        <article class="variant-card">
-          <div class="variant-img"><img src="assets/components/wh1-0.jpg" alt="WH1.0"></div>
-          <span class="version-tag outline">WH1.0</span>
-          <p class="bike-desc">Yellow plastic side panel used on early production frames.</p>
-        </article>
-        <article class="variant-card">
-          <div class="variant-img"><img src="assets/components/wh2-0.jpg" alt="WH2.0"></div>
-          <span class="version-tag outline">WH2.0</span>
-          <p class="bike-desc">Metal spoke wheel replacing the early plastic panel.</p>
-        </article>
-        <article class="variant-card">
-          <div class="variant-img"><img src="assets/components/wh2-mix.jpg" alt="WH2-MIX"></div>
-          <span class="version-tag outline">WH2-MIX</span>
-          <p class="bike-desc">Wheel variant found on the branch line version.</p>
-        </article>
-      </div>
+      <div class="carousel" id="variant-carousel"></div>
     </section>
 
     <section class="section" id="why">
@@ -160,6 +160,52 @@
 </div>
 
 <script>
+  // ── 构成板块：组件 nav + 变体 carousel ──
+  const componentSpecs = {
+    wheel:       { abbr: 'WH', count: 3 },
+    painting:    { abbr: 'PT', count: 2 },
+    seat:        { abbr: 'ST', count: 2 },
+    fender:      { abbr: 'FK', count: 2 },
+    basket:      { abbr: 'BK', count: 3 },
+    handle:      { abbr: 'HD', count: 2 },
+    lock:        { abbr: 'LK', count: 2 },
+    pedal:       { abbr: 'PD', count: 2 },
+    qrcode:      { abbr: 'QR', count: 3 },
+    accessories: { abbr: 'AC', count: 4 },
+  };
+  const PLACEHOLDER_IMG = 'assets/components/wh1-0.jpg';
+
+  const componentCards = Array.from(document.querySelectorAll('.component-card'));
+  const variantCarousel = document.getElementById('variant-carousel');
+
+  function renderVariants(key) {
+    const spec = componentSpecs[key];
+    if (!spec) return;
+    variantCarousel.innerHTML = '';
+    for (let i = 1; i <= spec.count; i++) {
+      const card = document.createElement('article');
+      card.className = 'variant-card';
+      card.innerHTML = `
+        <div class="variant-img"><img src="${PLACEHOLDER_IMG}" alt="V?-${spec.abbr}${i}"></div>
+        <span class="version-tag outline">V?-${spec.abbr}${i}</span>
+      `;
+      variantCarousel.appendChild(card);
+    }
+    variantCarousel.scrollLeft = 0;
+  }
+
+  function selectComponent(key) {
+    componentCards.forEach(c => c.classList.toggle('is-active', c.dataset.key === key));
+    renderVariants(key);
+  }
+
+  componentCards.forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', () => selectComponent(card.dataset.key));
+  });
+
+  selectComponent('wheel');
+
   const bikes = Array.from(document.querySelectorAll('.bike-card'));
   const modal = document.getElementById('modal');
   const strip = document.getElementById('modal-strip');
