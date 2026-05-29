@@ -291,6 +291,9 @@ a { color: inherit; text-decoration: none; }
 
 /* ── Footer ── */
 .site-footer {
+  max-width: clamp(320px, 100%, 800px);
+  margin-left: auto;
+  margin-right: auto;
   padding: 32px var(--page-pad) 48px;
 }
 
